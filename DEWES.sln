@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{FE372216-9438-453D-B0D0-33B3BB6F1DD7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataSourceLibraries", "DataSourceLibraries", "{6820DCB4-8ABB-46B7-8BAE-A6F3AAA750DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataSinkLibraries", "DataSinkLibraries", "{48C786CA-8F8B-4CC4-8D2C-FA69446D2E04}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataConverterLibraries", "DataConverterLibraries", "{D07B4994-E8CA-4B6E-A964-4F8D5ACDC742}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DewesDB", "DewesDB\DewesDB.csproj", "{AE78FEDE-880E-45FC-B476-B7CB43A72FCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataSourceTest1", "DataSourceTest1\DataSourceTest1.csproj", "{8DC9513B-596D-449F-8E1B-B360705225F1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bin", "bin", "{09C38E99-ECC7-4131-B294-7FDAF811616F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataSourceLibraries", "DataSourceLibraries", "{1C0B74F5-E32D-496E-8A04-C1781B46F265}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{414AA3FA-D316-411D-AB5B-3AF984251BE8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE372216-9438-453D-B0D0-33B3BB6F1DD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE372216-9438-453D-B0D0-33B3BB6F1DD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE372216-9438-453D-B0D0-33B3BB6F1DD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE372216-9438-453D-B0D0-33B3BB6F1DD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE78FEDE-880E-45FC-B476-B7CB43A72FCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE78FEDE-880E-45FC-B476-B7CB43A72FCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE78FEDE-880E-45FC-B476-B7CB43A72FCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE78FEDE-880E-45FC-B476-B7CB43A72FCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DC9513B-596D-449F-8E1B-B360705225F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DC9513B-596D-449F-8E1B-B360705225F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DC9513B-596D-449F-8E1B-B360705225F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DC9513B-596D-449F-8E1B-B360705225F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{414AA3FA-D316-411D-AB5B-3AF984251BE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{414AA3FA-D316-411D-AB5B-3AF984251BE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{414AA3FA-D316-411D-AB5B-3AF984251BE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{414AA3FA-D316-411D-AB5B-3AF984251BE8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8DC9513B-596D-449F-8E1B-B360705225F1} = {6820DCB4-8ABB-46B7-8BAE-A6F3AAA750DE}
+		{1C0B74F5-E32D-496E-8A04-C1781B46F265} = {09C38E99-ECC7-4131-B294-7FDAF811616F}
+	EndGlobalSection
+EndGlobal
