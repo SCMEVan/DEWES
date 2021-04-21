@@ -7,20 +7,26 @@ namespace Core.LibraryHelper
 {
     public class LibraryManager
     {
-        private readonly DataSourceLibrariesLoader _dataSourceLibrariesLoader = new DataSourceLibrariesLoader();
+        
+        public readonly DataSourceLibrariesLoader DataSourceLibrariesLoader = new DataSourceLibrariesLoader();
+        public readonly DataConverterLibrariesLoader DataConverterLibrariesLoader = new DataConverterLibrariesLoader();
+        public readonly DataSinkLibrariesLoader DataSinkLibrariesLoader = new DataSinkLibrariesLoader();
 
-        public LibraryManager()
+        public LibraryManager(string routFolder = null)
         {
-            _dataSourceLibrariesLoader.LoadDataSourceLibraries();
+            DataSourceLibrariesLoader.LoadLibraries(routFolder);
+            DataConverterLibrariesLoader.LoadLibraries(routFolder);
+            DataSinkLibrariesLoader.LoadLibraries(routFolder);
         }
         
         
-        public List<string> DataSourceNames => _dataSourceLibrariesLoader.Instances.Select(m => m.Name).ToList();
-        public List<string> GetDataTypesByName(string sourceName) => 
-            _dataSourceLibrariesLoader.Instances.Single(m => m.Name == sourceName).DataTypesFormats.Keys.Select(m=> m.ToString()).ToList();
-
-        public List<string> GetDataFormatByDataType(string sourceName, string dataType) =>
-            _dataSourceLibrariesLoader.Instances.Single(m => m.Name == sourceName).DataTypesFormats[(EDataType)Enum.Parse(typeof(EDataType),dataType)].Select(m=> m.ToString()).ToList();
+        /*public List<string> DataSourceNames => _dataSourceLibrariesLoader.DataSourceNames;
+        public List<string> GetDataTypesByName(string sourceName) => _dataSourceLibrariesLoader.GetDataTypesByName(sourceName);
+        public List<string> GetDataFormatByDataType(string sourceName, string dataType) => _dataSourceLibrariesLoader.GetDataFormatByDataType(sourceName, dataType);
+        
+        
+        public List<string> DataSinkNames => _dataSourceLibrariesLoader.DataSourceNames;
+        public List<string> GetDataFormatBySink(string sourceName, string dataType) => _dataSourceLibrariesLoader.GetDataFormatByDataType(sourceName, dataType);*/
 
     }
 }

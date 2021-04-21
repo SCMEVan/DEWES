@@ -10,10 +10,11 @@ namespace DataSourceTest1
     /// <summary>
     /// Тестовый источник данных
     /// </summary>
-    public class Test1 : DataSource
+    public class DataSourceTest1 : DataSource
     {
-        public override string Name => "I_Test1";
-
+        public override string Name => CName;
+        public const string CName = "I_Test1";
+        
         /// <summary>
         /// Тестовый набор данных и их форматов
         /// </summary>

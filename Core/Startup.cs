@@ -25,8 +25,13 @@ namespace Core
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<LibraryManager>();
+            var libraryManager = new LibraryManager();
+            if (!libraryManager.DataConverterLibrariesLoader.CheckDuplicates)
+                throw new Exception("Обнаружены дубли в библиотеках конвертерах");
+            
+            services.AddSingleton(new LibraryManager());
             services.AddControllers();
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

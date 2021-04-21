@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Core.LibraryHelper;
+using Interfaces.Enums;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Core.Controllers
@@ -9,6 +10,7 @@ namespace Core.Controllers
     public class DataSourceController : Controller
     {
         private readonly LibraryManager _libraryManager;
+        private DataSourceLibrariesLoader DataSourceLibrariesLoader => _libraryManager.DataSourceLibrariesLoader;
         public DataSourceController(LibraryManager libraryManager)
         {
             _libraryManager = libraryManager;
@@ -20,9 +22,9 @@ namespace Core.Controllers
         /// </summary>
         /// <returns>Имена источников данных</returns>
         [HttpGet]
-        public List<string> Test1()
+        public List<string> DataSourceNames()
         {
-            return _libraryManager.DataSourceNames;
+            return DataSourceLibrariesLoader.DataSourceNames;
         }
         
         /// <summary>
@@ -31,10 +33,10 @@ namespace Core.Controllers
         /// <param name="sourceName">Имя источника данных</param>
         /// <returns></returns>
         [HttpGet]
-        public List<string> Test2(string sourceName)
+        public List<EDataType> GetDataTypesByName(string sourceName)
         {
-            return _libraryManager.GetDataTypesByName(sourceName == null ? _libraryManager.DataSourceNames.First() 
-                : _libraryManager.DataSourceNames.Single(m=> m == sourceName));
+            return DataSourceLibrariesLoader.GetDataTypesByName(sourceName == null ? DataSourceLibrariesLoader.DataSourceNames.First() 
+                : DataSourceLibrariesLoader.DataSourceNames.Single(m=> m == sourceName));
         }
         
         /// <summary>
@@ -44,11 +46,11 @@ namespace Core.Controllers
         /// <param name="dataType">Имя приемника данных</param>
         /// <returns></returns>
         [HttpGet]
-        public List<string> Test3(string sourceName, string dataType)
+        public List<EDataFormat> GetDataFormatByDataType(string sourceName, EDataType? dataType)
         {
             return sourceName == null || dataType == null ? 
-                _libraryManager.GetDataFormatByDataType(_libraryManager.DataSourceNames.First(), _libraryManager.GetDataTypesByName(_libraryManager.DataSourceNames.First()).First()) 
-                : _libraryManager.GetDataFormatByDataType(sourceName, dataType);
+                DataSourceLibrariesLoader.GetDataFormatByDataType(DataSourceLibrariesLoader.DataSourceNames.First(), DataSourceLibrariesLoader.GetDataTypesByName(DataSourceLibrariesLoader.DataSourceNames.First()).First()) 
+                : DataSourceLibrariesLoader.GetDataFormatByDataType(sourceName, dataType.Value);
         }
         
         

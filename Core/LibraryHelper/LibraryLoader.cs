@@ -35,14 +35,16 @@ namespace Core.LibraryHelper
         /// <summary>
         /// Экземпляры классов реализующие нужный интерфейс
         /// </summary>
-        public List<T> Instances { get; private set; }
+        protected List<T> Instances { get; private set; }
         
         /// <summary>
         /// Загружает библиотеки с нужным интерфейсом, создаёт экземпляры классов реализующие его
         /// </summary>
-        public void LoadDataSourceLibraries()
+        public void LoadLibraries(string routFolder = null)
         {
-            _assemblies = Directory.GetFiles(LibrariesFolder).Where(m=> Path.GetExtension(m) == DllFileNameExtension).Select(m=> Assembly.LoadFile(Path.GetFullPath(m))).ToList();
+            routFolder ??= Directory.GetCurrentDirectory();
+            _assemblies = Directory.GetFiles(Path.Combine(routFolder, LibrariesFolder))
+                .Where(m=> Path.GetExtension(m) == DllFileNameExtension).Select(m=> Assembly.LoadFile(Path.GetFullPath(m))).ToList();
             _exportedTypes = _assemblies.SelectMany(m=> m.GetExportedTypes().Where(n=> n.GetInterfaces().Contains(typeof(T)))).ToList();
             Instances = _exportedTypes.Select(Activator.CreateInstance).Cast<T>().ToList();
         }
