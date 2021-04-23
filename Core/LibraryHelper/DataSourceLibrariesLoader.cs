@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Interfaces;
 using Interfaces.Enums;
@@ -9,7 +8,7 @@ namespace Core.LibraryHelper
     /// <summary>
     /// Загрузчик библиотек для интерфейса источник данных
     /// </summary>
-    public class DataSourceLibrariesLoader : LibraryLoader<IDataSource>
+    public class DataSourceLibrariesLoader : LibraryLoaderWithName<IDataSource>
     {
         /// <summary>
         /// Папка с библиотеками 

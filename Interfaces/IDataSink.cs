@@ -1,16 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Interfaces.Enums;
 
 namespace Interfaces
 {
-    public interface IDataSink
+    public interface IDataSink : IHasName
     {
-        /// <summary>
-        /// Имя
-        /// </summary>
-        string Name { get; }
-        
         /// <summary>
         /// Тип данных
         /// </summary>

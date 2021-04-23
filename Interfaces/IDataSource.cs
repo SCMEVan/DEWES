@@ -7,13 +7,8 @@ namespace Interfaces
     /// <summary>
     /// Интерфейс источника данных
     /// </summary>
-    public interface IDataSource
+    public interface IDataSource : IHasName
     {
-        /// <summary>
-        /// Имя
-        /// </summary>
-        string Name { get; }
-        
         /// <summary>
         /// Тип данных
         /// </summary>

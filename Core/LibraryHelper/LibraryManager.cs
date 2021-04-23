@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using DEWESDb;
-using Interfaces.Enums;
+﻿using Core.Schedule;
 
 namespace Core.LibraryHelper
 {
@@ -22,11 +18,9 @@ namespace Core.LibraryHelper
             DataSinkLibrariesLoader.LoadLibraries(DataConverterLibrariesLoader.AllFormats, routFolder);
         }
 
-        public void SinkLibraryWithDb(DbScheduleContext db)
-        {
-        }
         
-        
+
+
         /*public List<string> DataSourceNames => _dataSourceLibrariesLoader.DataSourceNames;
         public List<string> GetDataTypesByName(string sourceName) => _dataSourceLibrariesLoader.GetDataTypesByName(sourceName);
         public List<string> GetDataFormatByDataType(string sourceName, string dataType) => _dataSourceLibrariesLoader.GetDataFormatByDataType(sourceName, dataType);

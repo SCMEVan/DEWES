@@ -1,14 +1,10 @@
-﻿
-using System.Diagnostics;
-using DEWESDb.Table;
+﻿using DEWESDb.Table;
 using Microsoft.EntityFrameworkCore;
 
 namespace DEWESDb
 {
     public class DbScheduleContext : DbContext
     {
-        public DbSet<DataSource> DataSources { get; set; }
-        public DbSet<DataSource> DataSinks { get; set; }
         public DbSet<Schedule> Schedules { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

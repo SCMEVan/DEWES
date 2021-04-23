@@ -10,7 +10,7 @@ namespace Core.LibraryHelper
     /// Загрузчик библиотек
     /// </summary>
     /// <typeparam name="T">Искомый интерфейс в библиотеках</typeparam>
-    public class LibraryLoader<T> 
+    public class LibraryLoader<T>
     {
         /// <summary>
         /// Расширение библиотек которые загружаем
@@ -40,7 +40,7 @@ namespace Core.LibraryHelper
         /// <summary>
         /// Загружает библиотеки с нужным интерфейсом, создаёт экземпляры классов реализующие его
         /// </summary>
-        public void LoadLibraries(string routFolder = null)
+        protected void LoadLibraries(string routFolder = null)
         {
             routFolder ??= Directory.GetCurrentDirectory();
             _assemblies = Directory.GetFiles(Path.Combine(routFolder, LibrariesFolder))

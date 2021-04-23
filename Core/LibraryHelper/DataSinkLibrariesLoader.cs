@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using Interfaces;
 using Interfaces.Enums;
-using Microsoft.EntityFrameworkCore.Internal;
 
 namespace Core.LibraryHelper
 {
     /// <summary>
     /// Загрузчик библиотеки приемников
     /// </summary>
-    public class DataSinkLibrariesLoader : LibraryLoader<IDataSink>
+    public class DataSinkLibrariesLoader : LibraryLoaderWithName<IDataSink>
     {
         private readonly Dictionary<EDataFormat, List<IDataSink>> _dataSinksByFormat = new Dictionary<EDataFormat, List<IDataSink>>();
         

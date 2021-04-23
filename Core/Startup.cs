@@ -1,18 +1,12 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Core.LibraryHelper;
+using Core.Schedule;
 using DEWESDb;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace Core
 {
@@ -33,8 +27,11 @@ namespace Core
 
             services.AddDbContext<DbScheduleContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString")));
             services.AddSingleton(libraryManager);
+            services.AddSingleton<Scheduler>();
             services.AddControllers();
             services.AddSwaggerGen();
+      
+            var q = CronExpressionDescriptor.ExpressionDescriptor.GetDescription("0 0/2 8-17 1 2");
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -44,8 +41,8 @@ namespace Core
             {
                 var db = serviceScope.ServiceProvider.GetService<DbScheduleContext>();
                 db.Database.Migrate();
-                var libraryManager = serviceScope.ServiceProvider.GetService<LibraryManager>();
-                
+                var scheduler = serviceScope.ServiceProvider.GetService<Scheduler>();
+                scheduler.ToPlan();
             }
             
             

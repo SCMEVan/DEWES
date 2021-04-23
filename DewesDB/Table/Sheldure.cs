@@ -20,21 +20,23 @@ namespace DEWESDb.Table
         public EDataFormat EDataSourceFormat { get; set; }
         
         /// <summary>
-        /// Id источника
+        /// Имя библиотеки источника
         /// </summary>
-        public Guid DataSourceId { get; set; }
-        /// <summary>
-        /// Источник
-        /// </summary>
-        public DataSource DataSource { get; set; }
+        public string DataSourceName { get; set; }
         
         /// <summary>
-        /// Id приемника
+        /// Имя библиотеки приемника
         /// </summary>
-        public Guid DataSinkId { get; set; }
+        public string DataSinkName { get; set; }
+
         /// <summary>
-        /// Приемник
+        /// Время создания задачи
         /// </summary>
-        public DataSink DataSink { get; set; }
+        public DateTime DateTimeCreate { get; set; }
+
+        /// <summary>
+        /// Интервал выполнения
+        /// </summary>
+        public string Interval { get; set; }
     }
 }
