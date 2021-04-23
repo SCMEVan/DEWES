@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using DEWESDb;
 using Interfaces.Enums;
 
 namespace Core.LibraryHelper
@@ -14,9 +15,15 @@ namespace Core.LibraryHelper
 
         public LibraryManager(string routFolder = null)
         {
+            //Загружаем библиотеки, инициализируем в них локальные переменные
             DataSourceLibrariesLoader.LoadLibraries(routFolder);
             DataConverterLibrariesLoader.LoadLibraries(routFolder);
-            DataSinkLibrariesLoader.LoadLibraries(routFolder);
+            
+            DataSinkLibrariesLoader.LoadLibraries(DataConverterLibrariesLoader.AllFormats, routFolder);
+        }
+
+        public void SinkLibraryWithDb(DbScheduleContext db)
+        {
         }
         
         

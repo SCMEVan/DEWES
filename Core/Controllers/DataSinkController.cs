@@ -22,13 +22,15 @@ namespace Core.Controllers
         /// </summary>
         /// <param name="dataFormat">Формат источника</param>
         /// <returns>Имена всех возможных приемников с учетом конвертеров</returns>
+        [HttpGet]
         public List<string> GetValidSinkNames(EDataFormat dataFormat) =>
-            DataSinkLibrariesLoader.GetValidSink(dataFormat, _libraryManager.DataConverterLibrariesLoader.AllFormats).Select(m=> m.Name).ToList();
-
+            DataSinkLibrariesLoader.GetValidSink(dataFormat).Select(m=> m.Name).ToList();
+        
         /// <summary>
         /// Возвращает имена приемников
         /// </summary>
         /// <returns>Имена возвращаемых приемников</returns>
+        [HttpGet]
         public List<string> DataSinkNames() =>
             DataSinkLibrariesLoader.DataSinkNames;
 

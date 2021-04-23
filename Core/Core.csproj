@@ -10,7 +10,12 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\DewesDB\DewesDB.csproj" />
       <ProjectReference Include="..\Interfaces\Interfaces.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.3" />
     </ItemGroup>
 
 </Project>
