@@ -7,7 +7,7 @@ namespace Interfaces
     /// <summary>
     /// Интерфейс источника данных
     /// </summary>
-    public interface IDataSource : IHasName
+    public interface IDataSource : IClassInfo
     {
         /// <summary>
         /// Тип данных

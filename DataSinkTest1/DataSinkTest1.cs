@@ -10,7 +10,7 @@ namespace DataSinkTest1
     /// </summary>
     public class DataSinkTest1 : IDataSink
     {
-        public string Name => CName;
+        public string ClassName => CName;
         public const string CName = "DataSinkTest1";
         public ETypeDataSource TypeDataSource => ETypeDataSource.Dll;
         public EDataFormat DataFormat => EDataFormat.Edf3;

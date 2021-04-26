@@ -3,7 +3,7 @@ using Interfaces.Enums;
 
 namespace Interfaces
 {
-    public interface IDataSink : IHasName
+    public interface IDataSink : IClassInfo
     {
         /// <summary>
         /// Тип данных

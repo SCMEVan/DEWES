@@ -13,7 +13,7 @@ namespace Interfaces
         /// <summary>
         /// Имя источника
         /// </summary>
-        public virtual string Name => throw new NotImplementedException($"{nameof(Name)}");
+        public virtual string ClassName => throw new NotImplementedException($"{nameof(ClassName)}");
         
         /// <summary>
         /// Тип источника - библиотека или rest api

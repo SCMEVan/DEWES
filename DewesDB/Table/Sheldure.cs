@@ -11,11 +11,11 @@ namespace DEWESDb.Table
         public Guid ScheduleId  { get; set; }
 
         /// <summary>
-        /// Типа данных
+        /// Типа источника данных
         /// </summary>
         public EDataType EDataSourceType { get; set; }
         /// <summary>
-        /// Формат источника и приемника данных
+        /// Формат источника данных
         /// </summary>
         public EDataFormat EDataSourceFormat { get; set; }
         

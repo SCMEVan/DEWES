@@ -21,14 +21,14 @@ namespace Core.LibraryHelper
         /// <summary>
         /// Имена приемников
         /// </summary>
-        public List<string> DataSinkNames => Instances.Select(m => m.Name).ToList();
+        public List<string> DataSinkNames => Instances.Select(m => m.ClassName).ToList();
 
         /// <summary>
         /// Возвращает формат приемника по имени
         /// </summary>
         /// <param name="sourceName">Имя приемника</param>
         /// <returns>Формат приемника</returns>
-        public EDataFormat GetDataFormatByName(string sourceName) => Instances.Single(m => m.Name == sourceName).DataFormat;
+        public EDataFormat GetDataFormatByName(string sourceName) => Instances.Single(m => m.ClassName == sourceName).DataFormat;
 
         /// <summary>
         /// Получает все доступные приемника по формату источника

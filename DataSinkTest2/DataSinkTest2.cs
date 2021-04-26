@@ -7,7 +7,7 @@ namespace DataSinkTest2
 {
     public class DataSinkTest2: IDataSink
     {
-        public string Name => CName;
+        public string ClassName => CName;
         public const string CName = "DataSinkTest2";
         public ETypeDataSource TypeDataSource => ETypeDataSource.RestApi;
         public EDataFormat DataFormat => EDataFormat.Edf4;

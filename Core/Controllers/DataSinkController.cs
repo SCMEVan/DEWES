@@ -24,7 +24,7 @@ namespace Core.Controllers
         /// <returns>Имена всех возможных приемников с учетом конвертеров</returns>
         [HttpGet]
         public List<string> GetValidSinkNames(EDataFormat dataFormat) =>
-            DataSinkLibrariesLoader.GetValidSink(dataFormat).Select(m=> m.Name).ToList();
+            DataSinkLibrariesLoader.GetValidSink(dataFormat).Select(m=> m.ClassName).ToList();
         
         /// <summary>
         /// Возвращает имена приемников

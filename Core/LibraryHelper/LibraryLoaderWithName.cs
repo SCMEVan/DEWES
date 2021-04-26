@@ -18,7 +18,7 @@ namespace Core.LibraryHelper
         public new void LoadLibraries(string routFolder = null)
         {
             base.LoadLibraries(routFolder);
-            _classByName = Instances.Where(m => m is IHasName).ToDictionary(m => ((IHasName)m).Name, m=> m);
+            _classByName = Instances.Where(m => m is IClassInfo).ToDictionary(m => ((IClassInfo)m).ClassName, m=> m);
         }
     }
 }

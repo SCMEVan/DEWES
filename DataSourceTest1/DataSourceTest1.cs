@@ -12,7 +12,7 @@ namespace DataSourceTest1
     /// </summary>
     public class DataSourceTest1 : DataSource
     {
-        public override string Name => CName;
+        public override string ClassName => CName;
         public const string CName = "I_Test1";
         
         /// <summary>

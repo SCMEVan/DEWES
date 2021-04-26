@@ -18,7 +18,7 @@ namespace Core.LibraryHelper
         /// <summary>
         /// Имена источников
         /// </summary>
-        public List<string> DataSourceNames => Instances.Select(m => m.Name).ToList();
+        public List<string> DataSourceNames => Instances.Select(m => m.ClassName).ToList();
         
         /// <summary>
         /// Возвращает типы данных источника по его имени
@@ -26,7 +26,7 @@ namespace Core.LibraryHelper
         /// <param name="sourceName">Имя источника</param>
         /// <returns>Типы источника</returns>
         public List<EDataType> GetDataTypesByName(string sourceName) => 
-            Instances.Single(m => m.Name == sourceName).DataTypesFormats.Keys.ToList();
+            Instances.Single(m => m.ClassName == sourceName).DataTypesFormats.Keys.ToList();
         
         /// <summary>
         /// Возвращает форматы данных источника по его имени и типу данных
@@ -35,6 +35,6 @@ namespace Core.LibraryHelper
         /// <param name="dataType">Тип данных</param>
         /// <returns>форматы данных источника</returns>
         public List<EDataFormat> GetDataFormatByDataType(string sourceName, EDataType dataType) =>
-            Instances.Single(m => m.Name == sourceName).DataTypesFormats[dataType].Select(m=> m).ToList();
+            Instances.Single(m => m.ClassName == sourceName).DataTypesFormats[dataType].Select(m=> m).ToList();
     }
 }
